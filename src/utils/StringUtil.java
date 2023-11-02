@@ -1,7 +1,6 @@
 package utils;
 
 public class StringUtil {
-
     public static String padLeading(String s, int len, char ch)
     {
         int length = s.length();
