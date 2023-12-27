@@ -1,6 +1,9 @@
-package util;
+package util.string;
+
+import java.util.Random;
 
 public class StringUtil {
+    public static String alphabetAllTR = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZabcçdefgğhıijklmnoöprsştuüvyz";
     public static String padLeading(String s, int len, char ch)
     {
         int length = s.length();
@@ -103,5 +106,37 @@ public class StringUtil {
                 return false;
 
         return true;
+    }
+
+    public static String getRandomText(Random r, int n, String sourceText)
+    {
+        char [] c = new char[n];
+        int len = sourceText.length();
+
+        for (int i = 0; i < n; ++i)
+            c[i] = sourceText.charAt(r.nextInt(len));
+
+        return String.valueOf(c);
+    }
+    public static void fillRandomTexts(Random r, String [] texts, int n, String sourceText)
+    {
+        for (int i = 0; i < texts.length; ++i)
+            texts[i] = getRandomText(r, n, sourceText);
+    }
+
+    public static void fillRandomTexts(Random r, String [] texts, int min, int bound,  String sourceText)
+    {
+        for (int i = 0; i < texts.length; ++i)
+            texts[i] = getRandomText(r, r.nextInt(min, bound), sourceText);
+    }
+
+    public static void fillRandomTextsTR(Random r, String [] texts, int n)
+    {
+        fillRandomTexts(r,texts, n, alphabetAllTR);
+    }
+
+    public static void fillRandomTextsTR(Random r, String [] texts, int min, int bound)
+    {
+        fillRandomTexts(r,texts, min, bound, alphabetAllTR);
     }
 }

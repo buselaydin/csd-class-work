@@ -1,6 +1,6 @@
 package test;
 
-import util.StringUtil;
+import util.string.StringUtil;
 
 public class GetShortestPangramTest {
     public static void run(){
