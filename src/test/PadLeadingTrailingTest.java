@@ -1,6 +1,6 @@
 package test;
 
-import utils.StringUtil;
+import util.StringUtil;
 
 public class PadLeadingTrailingTest {
     public static void run()

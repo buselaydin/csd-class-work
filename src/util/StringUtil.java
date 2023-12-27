@@ -1,4 +1,4 @@
-package utils;
+package util;
 
 public class StringUtil {
     public static String padLeading(String s, int len, char ch)
