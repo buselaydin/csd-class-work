@@ -139,4 +139,49 @@ public class StringUtil {
     {
         fillRandomTexts(r,texts, min, bound, alphabetAllTR);
     }
+
+    public static String join(String [] s, char delimiter)
+    {
+        return join(s, delimiter + "");
+    }
+
+    public static String join(String [] s, String delimiter)
+    {
+        String result = "";
+
+        for (int i = 0; i < s.length; ++i)
+            result += s[i] + delimiter;
+
+        return result.substring(0, result.length() - delimiter.length());
+    }
+
+    public static String [] getRandomTexts(Random r, int count, int min, int bound, String sourceText)
+    {
+        String [] texts = new String[count];
+
+        for (int i = 0; i < count; ++i)
+            texts[i] = getRandomText(r, r.nextInt(min, bound), sourceText);
+
+        return texts;
+    }
+
+    public static String [] getRandomTexts(Random r, int count, int n, String sourceText)
+    {
+        String [] texts = new String[count];
+
+        for (int i = 0; i < count; ++i)
+            texts[i] = getRandomText(r, n, sourceText);
+
+        return texts;
+    }
+
+    public static String [] getRandomTextsTR(Random r, int count, int min, int bound)
+    {
+        return getRandomTexts(r, count, min, bound, alphabetAllTR);
+    }
+
+    public static String [] getRandomTextsTR(Random r, int count, int n)
+    {
+        return getRandomTexts(r, count, n, alphabetAllTR);
+    }
 }
