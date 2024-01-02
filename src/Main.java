@@ -1,5 +1,4 @@
-import test.GetShortestPangramTest;
-import test.PadLeadingTrailingTest;
+import org.csystem.test.GetShortestPangramTest;
 
 public class Main {
     public static void main(String[] args) {
